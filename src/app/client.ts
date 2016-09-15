@@ -3,7 +3,7 @@ import ApolloClient, { createNetworkInterface } from 'apollo-client';
 // Polyfill fetch
 import 'whatwg-fetch';
 
-const networkInterface = createNetworkInterface('https://api.graph.cool/simple/v1/cis7q7f5r27ig01420766c54k');
+const networkInterface = createNetworkInterface('https://api.graph.cool/simple/v1/__PROJECT_ID__');
 
 // This is to let the server know that the example app has started. (Not necessary for normal projects)
 networkInterface.use([{
