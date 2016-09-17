@@ -9,7 +9,7 @@
   },
   "graphql": {
     "request": {
-      "url": "https://api.graph.cool/simple/v1/cis7q7f5r27ig01420766c54k"
+      "url": "https://api.graph.cool/simple/v1/__PROJECT_ID__"
     }
   },
   "private": true,
