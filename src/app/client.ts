@@ -1,11 +1,10 @@
-import { ApolloClient, createBatchingNetworkInterface } from 'apollo-client';
+import { ApolloClient, createNetworkInterface } from 'apollo-client';
 
 // Polyfill fetch
 import 'whatwg-fetch';
 
-const networkInterface = createBatchingNetworkInterface({
-  uri: 'https://api.graph.cool/simple/v1/__PROJECT_ID__',
-  batchInterval: 10
+const networkInterface = createNetworkInterface({
+  uri: 'https://api.graph.cool/simple/v1/__PROJECT_ID__'
 });
 
 // The x-graphcool-source header is to let the server know that the example app has started.
