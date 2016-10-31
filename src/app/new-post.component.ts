@@ -44,7 +44,7 @@ export class NewPostComponent {
 
   postImage(): void {
 
-  this.apollo.mutate({
+    this.apollo.mutate({
       mutation: gql`
           mutation ($description: String!, $imageUrl: String!){
               createPost(description: $description, imageUrl: $imageUrl) {

@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import gql from 'graphql-tag';
 
-const AllPostsQuery= gql`
+const AllPostsQuery = gql`
   query allPosts {
       allPosts {
           id
@@ -42,7 +42,7 @@ export class FeedComponent implements OnInit, OnDestroy {
   ) {}
 
   setImage(url: string) {
-    let styles = {
+    const styles = {
       'background-image':  `url(${url})`,
       'background-size': 'cover',
       'padding-bottom': '100%',
@@ -51,7 +51,6 @@ export class FeedComponent implements OnInit, OnDestroy {
   }
 
   handleDelete(id: string) {
-
     this.apollo.mutate({
       mutation: gql`
         mutation ($id: ID!) {
@@ -63,7 +62,7 @@ export class FeedComponent implements OnInit, OnDestroy {
       variables: {
         id: id,
       },
-    })
+    });
   }
 
   ngOnInit() {
