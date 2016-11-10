@@ -56,8 +56,10 @@ export class NewPostComponent {
         description: this.description,
         imageUrl: this.imageUrl,
       },
-    }).then(() => {
-      this.router.navigate(['/']);
-    });
+    })
+      .toPromise()
+      .then(() => {
+        this.router.navigate(['/']);
+      });
   }
 }

@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs/Subscription';
 
 import gql from 'graphql-tag';
 
+import 'rxjs/add/operator/toPromise';
+
 const AllPostsQuery = gql`
   query allPosts {
       allPosts {
@@ -62,7 +64,7 @@ export class FeedComponent implements OnInit, OnDestroy {
       variables: {
         id: id,
       },
-    });
+    }).toPromise();
   }
 
   ngOnInit() {
