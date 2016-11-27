@@ -69,8 +69,7 @@ export class FeedComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.allPostsSub = this.apollo.watchQuery({
-      query: AllPostsQuery,
-      pollInterval: 1000,
+      query: AllPostsQuery
     }).subscribe(({data, loading}) => {
       this.allPosts = data.allPosts.reverse();
       this.loading = loading;
