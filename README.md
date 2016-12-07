@@ -1,9 +1,9 @@
-# angular-apollo-instagram-example
+# angular-apollo-instagram-subscriptions-example
 ![](http://i.imgur.com/acxRg0p.png)
 
 ## Getting Started
 
-After [downloading this example](https://github.com/graphcool-examples/angular-apollo-instagram-example/archive/master.zip) please follow these steps.
+After [downloading this example](https://github.com/graphcool-examples/angular-apollo-instagram-subscriptions-example/archive/master.zip) please follow these steps.
 
 ### 1. Create an account
 
@@ -31,7 +31,7 @@ const networkInterface = createNetworkInterface('https://api.graph.cool/simple/v
 
 ### 3. Run the example
 
-You're done configuring the example application. Please run the following command and open [localhost:3000](http://localhost:3000) in your browser. Have fun exploring! 🎉
+You're done configuring the example application. Please run the following command and open [localhost:3000](http://localhost:3000) in your browser. Make sure to have two or more tabs open to see subscriptions in action. Have fun exploring! 🎉
 
 ```sh
 npm install
