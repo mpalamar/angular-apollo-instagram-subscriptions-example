@@ -28,6 +28,12 @@ Open `src/app/client.ts` and paste your endpoint to the following line:
 const networkInterface = createNetworkInterface('https://api.graph.cool/simple/v1/__PROJECT_ID__')
 ```
 
+Open `src/app/feed.component.ts` and paste your endpoint to the following line:
+
+```js
+const wsClient = new Client('ws://subscriptions.graph.cool/__PROJECT_ID__', {
+```
+
 
 ### 3. Run the example
 
