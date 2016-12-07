@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Angular2Apollo } from 'angular2-apollo';
 import { Subscription } from 'rxjs/Subscription';
+import {Client} from 'subscriptions-transport-ws'
 
 import gql from 'graphql-tag';
 
@@ -68,12 +69,30 @@ export class FeedComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.allPostsSub = this.apollo.watchQuery({
+    const queryObservable = this.apollo.watchQuery({
       query: AllPostsQuery
-    }).subscribe(({data, loading}) => {
+    })
+    this.allPostsSub = queryObservable.subscribe(({data, loading}) => {
       this.allPosts = data.allPosts.reverse();
       this.loading = loading;
     });
+
+    const wsClient = new Client('ws://subscriptions.graph.cool/__PROJECT_ID__', {
+      timeout: 10000
+    })
+
+    wsClient.subscribe({
+      query: `subscription {
+        createPost {
+          id
+          imageUrl
+          description
+        }
+      }`,
+      variables: null
+    }, (err, res) => {
+      queryObservable.refetch()
+    })
   }
 
   ngOnDestroy() {

@@ -15,7 +15,7 @@ networkInterface.use([{
       // Create the header object if needed.
       req.options.headers = {};
     }
-    req.options.headers['x-graphcool-source'] = 'example:angular-apollo-instagram';
+    req.options.headers['x-graphcool-source'] = 'example:angular-apollo-instagram-subscriptions';
     next();
   },
 }]);
