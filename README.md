@@ -1,4 +1,6 @@
 # angular-apollo-instagram-subscriptions-example
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/graphcool-examples/angular-apollo-instagram-subscriptions-example.svg)](https://greenkeeper.io/)
 ![](http://i.imgur.com/acxRg0p.png)
 
 ## Getting Started
